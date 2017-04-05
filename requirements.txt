@@ -1,0 +1,7 @@
+keras==2.0.2
+# uncomment next line if you don't have gpu
+#tensorflow==1.0.1
+# comment next line if you don't have gpu
+tensorflow-gpu==1.0.1
+h5py==2.7.0
+pillow==4.1.0
