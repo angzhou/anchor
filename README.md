@@ -4,7 +4,9 @@ Here are model, weights, and test samples for our handwritten Chinese character 
 
 The model is VGG like, we did try other CNN architectures such as ResNet, DenseNet, but so far this VGG-like model performs the best.  We also tried `wider` (increase number of conv filters per layer) nets, their results is on par with smaller one but take much longer to train.
 
-As of now (04/2017), this model achieves better test accuracy (97.25%) than any other published results, including ensemble results. (With ensemble, we actually have even better accuracy!).
+As of now (04/2017), this model achieves better test accuracy (97.25%) than any other published results, including ensemble results. (With ensemble, we did actually have even better accuracy!).
+
+The test data provided are a subset (about 1/10th) of test data from ICDAR 2013 Chinese Handwriting Recognition Competition. There are 3755 characters, each character has 6 samples.  So there are 3755*5=22530 samples total.
 
 ## Install
 
@@ -15,6 +17,8 @@ Just do:
 If you don't have GPU, replace `tensorflow-gpu` with `tensorflow`, note it takes significantly longer to run without GPU.
 
 ## Usage
+
+Clone this repo. (Warning: this is a big repo >100M, clone with caution.)
 
 If no argument:
 
@@ -42,7 +46,7 @@ It will print 3 top predictions for the single sample.
 
 ![尹 C017-f-f.png](/data/test/尹/C017-f-f.png) model is 100 sure it is `君`, but it is `尹`.
 
-![挚 C016-f-f.png](/data/test/挚 C016-f-f.png) Model is 100% sure it is `热`, but it is `挚`.
+![挚 C016-f-f.png](/data/test/挚/C016-f-f.png) Model is 100% sure it is `热`, but it is `挚`.
 
 AFAICT, model are correct, test data are simply incorrectly labeled. (Or the writer wrote the wrong characters)
 
