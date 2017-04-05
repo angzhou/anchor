@@ -6,7 +6,9 @@ The model is VGG like, we did try other CNN architectures such as ResNet, DenseN
 
 As of now (04/2017), this model achieves better test accuracy (97.25%) than any other published results, including ensemble results. (With ensemble, we did actually have even better accuracy!).
 
-The test data provided are a subset (about 1/10th) of test data from ICDAR 2013 Chinese Handwriting Recognition Competition. There are 3755 characters, each character has 6 samples.  So there are 3755*5=22530 samples total.
+The test data provided are a subset (about 1/10th) of test data from ICDAR 2013 Chinese Handwriting Recognition Competition. There are 3755 characters, each character has 6 samples.  So there are 3755*5=22530 samples total. 
+
+(The data is copyrighted by Institute of Automation, Chinese Academy of Science, see: C.-L. Liu, F. Yin, D.-H. Wang, Q.-F. Wang, CASIA online and offline Chinese handwriting databases, Proc. 11th International Conference on Document Analysis and Recognition (ICDAR), Beijing, China, 2011, pp.37-41.)
 
 ## Install
 
