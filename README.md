@@ -10,6 +10,8 @@ The test data provided are a subset (about 1/10th) of test data from ICDAR 2013 
 
 ## Install
 
+(Python 3 required)
+
 Just do:
 
     pip install keras tensorflow-gpu h5py pillow
