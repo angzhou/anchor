@@ -52,7 +52,7 @@ It will print 3 top predictions for the single sample.
 
 ![挚 C016-f-f.png](/data/test/挚/C016-f-f.png) Model is 100% sure it is `热`, but it is `挚`.
 
-AFAICT, model are correct, test data are simply incorrectly labeled. (Or the writer wrote the wrong characters)
+AFAICT, model is correct in all these cases, test data are simply incorrectly labeled. (Or the writer wrote the wrong characters)
 
 Now for some unsure predictions by the model:
 
