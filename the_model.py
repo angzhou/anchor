@@ -32,7 +32,7 @@ def conv_unit(input_tensor, nb_filters, mp=False, dropout=None):
     x = BatchNormalization(axis=3, momentum=0.66)(x)
 
     if mp:
-        x = MaxPooling2D()(x)
+        x = MaxPooling2D(pool_size=(3, 3), strides=(2, 2), padding='same')(x)
 
     return x
 
@@ -44,6 +44,7 @@ def out_block(input_tensor, nb_classes):
     x = Flatten()(input_tensor)
     x = Dense(1024)(x)
     x = relu()(x)
+    x = BatchNormalization(momentum=0.66)(x)
     x = Dense(256)(x)
     x = relu()(x)
     x = BatchNormalization(momentum=0.66)(x)
@@ -54,17 +55,21 @@ def out_block(input_tensor, nb_classes):
 
 def model_8(img_size, num_classes):
     """
-    5 blocks, 14 weight layers (2-2-2-2-3--3)
+    This is actually model N2B
+    5 blocks, 14 weight layers (1-2-2-3-3--3)
     """
     inputs = Input(shape=(img_size, img_size, 1))
-    x = conv_unit(inputs, 32)
-    x = conv_unit(x, 32, mp=True)
-    x = conv_unit(x, 64)
-    x = conv_unit(x, 64, mp=True)
+    x = ZeroPadding2D()(inputs)
+    x = Conv2D(64, (3, 3), strides=(2, 2))(x)
+    x = relu()(x)
+    x = BatchNormalization(momentum=0.66)(x)
     x = conv_unit(x, 128)
     x = conv_unit(x, 128, mp=True)
     x = conv_unit(x, 256)
     x = conv_unit(x, 256, mp=True)
+    x = conv_unit(x, 384)
+    x = conv_unit(x, 384)
+    x = conv_unit(x, 384, mp=True)
     x = conv_unit(x, 512)
     x = conv_unit(x, 512)
     x = conv_unit(x, 512, mp=True)
