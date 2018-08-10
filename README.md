@@ -1,5 +1,9 @@
 ## ANCHOR
 
+**08/2018 update:** Our single model top-1 test accuracy is now 97.68%.  We changed the model a little bit and also applied a few optimization techniques.  As of this time (08/2018), our result is again the best in the world, i.e., the state of the art. (end of update)
+
+---
+
 Here are model, weights, and test samples for our handwritten Chinese character recognition(HCCR) development.
 
 The model is VGG like, we did try other CNN architectures such as ResNet, DenseNet, but so far this VGG-like model performs the best.  We also tried `wider` (increase number of conv filters per layer) nets, their results is on par with smaller one but take much longer to train.
